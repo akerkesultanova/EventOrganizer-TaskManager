@@ -1,0 +1,38 @@
+﻿@model IEnumerable<App.Models.ToDo>
+
+
+<div id="progressBarToDo">
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width:@(Html.AttributeEncode(ViewBag.Percent))%"></div>
+    </div>
+</div>
+<table class="table table-bordered border-primary">
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @if (!item.IsDone)
+                {
+                    @Html.DisplayFor(modelItem => item.Description)
+                }
+                else
+                {
+                <div class="CompletedToDo">@Html.DisplayFor(modelItem => item.Description)</div>
+                }
+            </td>
+            <td>
+                @Html.CheckBoxFor(modelItem => item.IsDone, new { id = item.TaskId, @class = "ActiveCheck" })
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TaskId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TaskId })
+            </td>
+        </tr>
+    }
+
+</table>
+@section Scripts{
+    <script src="~/Custom_Scripts/AddCheckBoxListener.js"></script>
+}
+

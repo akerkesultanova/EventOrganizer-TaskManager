@@ -1,0 +1,215 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!--<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>-->
+
+<style>
+    header .carousel-inner .item {
+        height: 100vh;
+    }
+
+        header .carousel-inner .item img {
+            width: 100%;
+        }
+
+    .carousel-caption {
+        padding-bottom: 250px;
+    }
+
+        .carousel-caption h2 {
+            font-size: 50px;
+            text-transform: uppercase;
+        }
+
+    .carousel-control.right {
+        background-image: none;
+    }
+
+    .carousel-control.left {
+        background-image: none;
+    }
+
+    .slideshow {
+        max-width: 1000px;
+        position: relative;
+    }
+
+    div {
+        display: block;
+    }
+
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+    .u-mt4 {
+        margin-top: 2rem !important;
+    }
+
+    .u-center {
+        text-align: center;
+    }
+
+    element.style {
+    }
+
+    p {
+        display: block;
+    }
+</style>
+
+<header style="margin-top: 1%">
+
+
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="https://www.evidentlycochrane.net/wp-content/uploads/2020/02/Teenage-girl-on-laptop-in-bedroom.jpg" alt="...">
+                <div class="carousel-caption">
+                    <h2 class="animated bounceInRight" style="animation-delay: 1s; color:white">
+                        Use your time productively
+                    </h2>
+                    <h3 class="animated bounceInLeft" style="animation-delay: 2s; color: blueviolet">
+                        Use My Organizer for time management.
+                    </h3>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://previews.123rf.com/images/karandaev/karandaev1604/karandaev160400145/55094558-office-desk-workplace-with-pc-charts-smartphone-and-coffee-on-wooden-table-top-view.jpg" alt="...">
+                <div class="carousel-caption">
+                    <h2 class="animated slideInDown" style="animation-delay: 1s; color:blueviolet">
+                        List your tasks in terms of importance
+                    </h2>
+                    <h3 class="animated slideInRight" style="animation-delay: 2s; color:black">
+                        Do important tasks first.
+                    </h3>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://c2.peakpx.com/wallpaper/813/374/453/4k-computer-hand-laptop-wallpaper.jpg" alt="...">
+                <div class="carousel-caption">
+                    <h2 class="animated zoomIn" style="animation-delay: 1s; color:black">
+                        Schedule breaks and interruptions.
+                    </h2>
+                    <h3 class="animated zoomIn" style="animation-delay: 2s; color:black">
+                        Plan tiny breaks during daily tasks.
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</header>
+
+<br />
+
+
+<div class="slideshow u-mt4" id="slides">
+    <div class="slideshow_slide a-fade slideshow_slide--active">
+        <div class="u-gray u-m4" role="option" style="min-height:260px">
+            <h2 style="color: blueviolet" class="u-size-xxl u-bold u-mb3 u-center"><strong>What is it?</strong></h2>
+            <p style="color: blueviolet;font:bold; font-size:large;">* The Pomodoro Technique is a time management technology that can be used for any task. For many people, time is the enemy. Anxiety caused by the ticking of the clock leads to ineffective work and a habit of delaying tasks (procrastination).</p>
+            <p style="color: blueviolet;font:bold; font-size:large;">* The Pomodoro Technique allows time to be used as a valuable ally in achieving what we want to do and how we want to do it. It gives us the opportunity to continually improve the way we work or learn.</p>
+        </div>
+    </div>
+    <div class="slideshow_slide a-fade">
+        <div class="u-gray u-m4" role="option" style="min-height:260px">
+            <h2 style="color: blueviolet" class="u-size-xxl u-bold u-mb3 u-center"><strong>Goals</strong></h2>
+            <p style="color: blueviolet;font:bold; font-size:large;">* The Pomodoro Technique provides a simple tool to improve performance (for you or your team) and can be used to:</p>
+            <p style="color: blueviolet;font:bold; font-size:large;">* Make it easier to get started;</p>
+            <p style="color: blueviolet;font:bold; font-size:large;">* Improving concentration, eliminating distractions;</p>
+            <p style="color: blueviolet;font:bold; font-size:large;">* Raising awareness of your decisions;</p>
+            <p style="color: blueviolet;font:bold; font-size:large;">* Improve and maintain motivation;</p>
+            <p style="color: blueviolet;font:bold; font-size:large;">* Certainty with an understanding of achieving your goals;</p>
+            <p style="color: blueviolet;font:bold; font-size:large;">* Refine the task assessment process, qualitatively and quantitatively;</p>
+            <p style="color: blueviolet;font:bold; font-size:large;">* Improvements to your work and learning process;</p>
+            <p style="color: blueviolet;font:bold; font-size:large;">* Strengthening your resolve in difficult situations;</p>
+        </div>
+    </div>
+    <div class="slideshow_slide a-fade">
+        <div class="u-gray u-m4" role="option" style="min-height:260px">
+            <h2 style="color: blueviolet" class="u-size-xxl u-bold u-mb3 u-center"><strong>The basics</strong></h2>
+            <p style="color: blueviolet;font:bold; font-size:large;">* At the beginning of each day, select tasks to complete and put them on the planning list above.</p>
+            <p style="color: blueviolet;font:bold; font-size:large;">* Get started:</p>
+            <p style="color: blueviolet;font:bold; font-size:large;">* Start the timer ("tomato");</p>
+            <p style="color: blueviolet;font:bold; font-size:large;">*Work until the "tomato" rings;</p>
+            <p style="color: blueviolet;font:bold; font-size:large;">* Take a short break (3-5 minutes);</p>
+            <p style="color: blueviolet;font:bold; font-size:large;">* Continue to work "tomato" after "tomato" until all tasks are completed. Every 4 "tomatoes" take a long break (15-30 minutes).</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="slideshow_slide a-fade">
+                    <div class="u-gray u-m4" role="option" style="min-height:260px">
+                        <h2 style="color: blueviolet" class="u-size-xxl u-bold u-mb3 u-center"><strong>Rules and Tips</strong></h2>
+                        <p style="color: blueviolet;font:bold; font-size:large;">* If the task requires more than 5-7 "tomatoes" - break it down into subtasks;</p>
+                        <p style="color: blueviolet;font:bold; font-size:large">* If the task requires less than one "tomato" - combine it with another task;</p>
+                        <p style="color: blueviolet;font:bold; font-size:large">* If you started "tomato" - you must finish it;</p>
+                        <p style="color: blueviolet;font:bold; font-size:large">* The next "tomato" will be better;</p>
+                        <p style="color: blueviolet;font:bold; font-size:large">* Log in to the service and track your progress;</p>
+                        <p style="color: blueviolet;font:bold; font-size:large">* The Pomodoro Technique should not be used in your free time. Enjoy your time!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slideshow_prev">
+        <i class="fa fa-chevron-left fa-lg"></i>
+    </div>
+    <div class="slideshow_next">
+        <i class="fa fa-chevron-right fa-lg"></i>
+    </div>
+    <div class="slideshow_dots">
+        <span class="slideshow_dots_dot slideshow_dots_dot--active"></span>
+        <span class="slideshow_dots_dot"></span>
+        <span class="slideshow_dots_dot"></span>
+        <span class="slideshow_dots_dot"></span>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<App.Models.EventCategory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Event categories</h2>
+
+
+<table class="table table-bordered border-primary">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryEventName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryEventName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CategoryEventId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CategoryEventId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CategoryEventId })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<button class="btn" style="background-color: blueviolet">
+    @Html.ActionLink("Create New", "Create", null, null, new { style = "color: White" })
+</button>

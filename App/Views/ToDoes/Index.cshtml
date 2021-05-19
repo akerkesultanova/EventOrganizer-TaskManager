@@ -1,0 +1,177 @@
+﻿@model App.Models.ToDo
+
+@{
+    ViewBag.Title = "Index";
+}
+<!-- Font Awesome icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+       * {
+           outline: 0px !important;
+           -webkit-appearance: none;
+       }
+       /* ---------------------------
+     MAIN CONTAINER
+    ----------------------------- */
+       #main-container {
+           width: 35%;
+           margin-top: 40px;
+           height: 580px;
+           box-shadow: 10px 90px 50px;
+       }
+       /* ---------------------------
+       HEADER PANEL
+    ----------------------------- */
+       #heading-panel {
+           height: 280px;
+           width: 100%;
+           padding-top: 30px;
+           color: #ffffff;
+           text-align: center;
+           background-color: #7f8fae;
+       }
+       /* ---------------------------
+       WORK DURATION PANEL
+    ----------------------------- */
+
+       .panel-2 {
+           height: 100px;
+           width: 100%;
+       }
+
+       #work-duration {
+           text-align: center;
+           width: 100%;
+           padding: 10px;
+           background-color: #dadaff;
+           color: #ffffff;
+       }
+       /* ---------------------------
+       BREAK DURATION PANEL
+    ----------------------------- */
+       #break-duration {
+           text-align: center;
+           width: 100%;
+           padding: 10px;
+           background-color: #dadaff;
+           color: #ffffff;
+       }
+       /* ---------------------------
+       BUTTON PANEL
+    ----------------------------- */
+       #button-panel {
+           text-align: center;
+           background-color: #fffcd3;
+           height: auto;
+           width: 100%;
+       }
+
+       .btn {
+           background-color: transparent;
+           text-transform: uppercase;
+           border: none;
+           color: #6d7797;
+           font-size: 1em;
+       }
+
+       .upperpanelBtn {
+           height: 50px;
+           font-size: 30px;
+       }
+
+           .upperpanelBtn:hover {
+               background-color: #fc5d66;
+           }
+       /* ---------------------------
+       TIMER PANEL
+    ----------------------------- */
+       #timer-panel {
+           background-color: #fc5d66;
+           color: #ffffff;
+           height: 270px;
+           width: 100%;
+           text-align: center;
+           padding: 20px;
+       }
+
+       #showtime {
+           font-size: 40px;
+       }
+</style>
+<h2>My To Do List</h2>
+
+<div id="tableDiv"></div>
+
+<div id="todoCreateForm">
+    @using (Ajax.BeginForm("AJAXCreate", "ToDoes", new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST",
+        UpdateTargetId = "tableDiv"
+    }))
+    {
+        <div class="form-group">
+            @Html.AntiForgeryToken()
+            <div>
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    }
+</div>
+<!-- main container class -->
+<div class="container" id="main-container">
+    <div class="row">
+        <div class="col-xs-12" id="heading-panel">
+            <!-- main heading -->
+            <h3> Pomodoro </h3>
+            <i class="fa fa-clock-o fa-5x" aria-hidden="true"></i>
+        </div>
+        <!-- end of xs-12 -->
+        <!-- Work Section -->
+        <div class="col-xs-12" id="work-duration">
+            <h7> Work Duration </h7>
+            <button class="btn btn-default upperpanelBtn" id="addWorkButton">+</button>
+            <h7 id="work-display">25</h7>
+            <button class="btn btn-default upperpanelBtn" id="minusWorkButton">-</button>
+        </div>
+        <!-- end of xs-12 -->
+        <!-- Break Div -->
+        <div class="col-xs-12" id="break-duration">
+            <h7> Break Duration </h7>
+            <button class="btn btn-default upperpanelBtn" id="addBreakButton"> + </button>
+            <h7 id="break-display">5</h7>
+            <button class="btn btn-default upperpanelBtn" id=minusBreakButton> - </button>
+        </div>
+        <!-- end of xs-12 -->
+        <!-- Start, Pause and Stop Buttons -->
+        <div class="col-xs-12" id="button-panel">
+            <button type="button" class="btn btn-success" id="start" onclick="start()">Start </button>
+            <button type="button" class="btn btn-warning" id="pause" onclick="pause()">Pause</button>
+            <button type="button" class="btn btn-danger" id="resume" onclick="resume()">
+                Resume
+            </button>
+            <button type="button" class="btn btn-danger" id="reset" onclick="reset()">
+                Reset
+            </button>
+        </div>
+        <!-- end of xs-12 -->
+        <!-- Timer Div -->
+        <div class="col-xs-12" id="timer-panel">
+            <span id="showtime"> </span>
+        </div>
+        <!-- end of xs-12 -->
+    </div>
+    <!-- end of row -->
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Custom_Scripts/BuildTable.js"></script>
+    <script src="~/Custom_Scripts/js/bootstrap.js"></script>
+    <script src="~/Custom_Scripts/js/bootstrap.min.js"></script>
+    <script src="~/Custom_Scripts/js/jquery.js"></script>
+    <script src="~/Custom_Scripts/js/main.js"></script>
+    <script src="~/Custom_Scripts/js/tether.min.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+}
